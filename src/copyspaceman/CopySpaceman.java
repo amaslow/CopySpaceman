@@ -108,7 +108,7 @@ public class CopySpaceman {
                 createLog(ean, sap, status);
             }
         } else {
-            if ((new Date(src.lastModified()).after(new Date(new Date().getTime()- (6 * 1000 * 60 * 60 * 24))))) {
+            if ((new Date(src.lastModified()).after(new Date(new Date().getTime()- (30 * 1000 * 60 * 60 * 24))))) {
                 System.out.println("Archive existing: " + dst.getName() + " - into: " + archDest);
                 copyFile(dst, archDest);
                 System.out.println("... and overwrite: " + src.getName() + " - onto existing: " + dst);
