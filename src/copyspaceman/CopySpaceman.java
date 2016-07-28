@@ -22,7 +22,7 @@ public class CopySpaceman {
     static String endDst2 = ".2";
     static String endDst3 = ".3";
     static String noEAN = "\\NoEAN\\";
-    static File dirProductContent = new File("G:\\Product Content\\PRODUCTS\\");
+    static File dirProductContent = new File("X:\\Smartwares - Product Content\\PRODUCTS\\");
     static File dirDestination = new File("G:\\CM\\Category Management Only\\_S0000_Trade marketing\\Pictures Spaceman\\");
     static String dirArchiveDest = "G:\\CM\\Category Management Only\\_S0000_Trade marketing\\Pictures Spaceman\\Archive+loose pics\\";
     static String excelname = dirDestination + "\\SAP_EAN.xlsx";
