@@ -22,7 +22,7 @@ public class CopySpaceman {
     static String endDst2 = ".2";
     static String endDst3 = ".3";
     static String noEAN = "\\NoEAN\\";
-    static File dirProductContent = new File("X:\\Smartwares - Product Content\\PRODUCTS\\");
+    static File dirProductContent = new File("\\\\172.16.55.197\\design\\Smartwares - Product Content\\PRODUCTS\\");
     static File dirDestination = new File("G:\\CM\\Category Management Only\\_S0000_Trade marketing\\Pictures Spaceman\\");
     static String dirArchiveDest = "G:\\CM\\Category Management Only\\_S0000_Trade marketing\\Pictures Spaceman\\Archive+loose pics\\";
     static String excelname = dirDestination + "\\SAP_EAN.xlsx";
@@ -108,7 +108,7 @@ public class CopySpaceman {
                 createLog(ean, sap, status);
             }
         } else {
-            if ((new Date(src.lastModified()).after(new Date(new Date().getTime()- (30 * 1000 * 60 * 60 * 24))))) {
+            if ((new Date(src.lastModified()).after(new Date(new Date().getTime()- (1 * 1000 * 60 * 60 * 24))))) {
                 System.out.println("Archive existing: " + dst.getName() + " - into: " + archDest);
                 copyFile(dst, archDest);
                 System.out.println("... and overwrite: " + src.getName() + " - onto existing: " + dst);
