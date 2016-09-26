@@ -23,10 +23,11 @@ public class CopySpaceman {
     static String endDst3 = ".3";
     static String noEAN = "\\NoEAN\\";
     static File dirProductContent = new File("\\\\172.16.55.197\\design\\Smartwares - Product Content\\PRODUCTS\\");
-    static File dirDestination = new File("G:\\CM\\Category Management Only\\_S0000_Trade marketing\\Pictures Spaceman\\");
-    static String dirArchiveDest = "G:\\CM\\Category Management Only\\_S0000_Trade marketing\\Pictures Spaceman\\Archive+loose pics\\";
+    static File dirDestination = new File("\\\\file01\\SL-Data\\CM\\Category Management Only\\_S0000_Trade marketing\\Pictures Spaceman\\");
+    static String dirArchiveDest = "\\\\file01\\SL-Data\\CM\\Category Management Only\\_S0000_Trade marketing\\Pictures Spaceman\\Archive+loose pics\\";
     static String excelname = dirDestination + "\\SAP_EAN.xlsx";
     static String excelOutput = dirDestination + "\\UpdateOverview.xlsx";
+    static String logFile = "\\\\srvdata\\Data\\Automatisering\\Artur\\Logs\\CopySpaceman.log";
 
     public static void main(String[] args) throws IOException {
         FileInputStream fis = null;
@@ -108,7 +109,7 @@ public class CopySpaceman {
                 createLog(ean, sap, status);
             }
         } else {
-            if ((new Date(src.lastModified()).after(new Date(new Date().getTime()- (1 * 1000 * 60 * 60 * 24))))) {
+            if ((new Date(src.lastModified()).after(new Date(new Date().getTime() - (1 * 1000 * 60 * 60 * 24))))) {
                 System.out.println("Archive existing: " + dst.getName() + " - into: " + archDest);
                 copyFile(dst, archDest);
                 System.out.println("... and overwrite: " + src.getName() + " - onto existing: " + dst);
@@ -121,7 +122,7 @@ public class CopySpaceman {
     }
 
     private static void createLog(String ean, String sap, String status) throws IOException, FileNotFoundException {
-        FileWriter fw = new FileWriter("H:/Logs/CopySpaceman.log", true);
+        FileWriter fw = new FileWriter(logFile, true);
         BufferedWriter bw = new BufferedWriter(fw);
         DateFormat dateFormater = new SimpleDateFormat("dd-MM-yyyy");
         String modDate = dateFormater.format(new Date());
